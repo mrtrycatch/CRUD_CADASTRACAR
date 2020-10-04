@@ -13,7 +13,7 @@ os métodos dos repositórios encontrados na pasta Repositories. Para facilitar,
 para criar os repositórios (utilização de classe genérica). <br>
 No projeto <b>Cadastracar.WEB</b>, em ASP NET Core, no padrão MVC, faz referência ao projeto de acesso aos
 dados. Na pasta Controllers, terão as classes com os métodos retornando as Views presentes na pasta Views.<br>
-Práticas com <b>bootstrap</b> para estilização do layout foi aplicado. Para melhor visualização dos itens
+Práticas com <b>bootstrap</b> para estilização do layout foi aplicada. Para melhor visualização dos itens
 da lista, implementei o <b>DataTables</b>, plugin de tabelas (listas) para <b>JQuery</b> com as funcionalidades de filtro
 por pesquisa, quantidade de itens a serem exibidos e paginação.
 </p>
