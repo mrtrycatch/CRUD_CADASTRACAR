@@ -25,3 +25,10 @@ por pesquisa, quantidade de itens a serem exibidos e paginação.
 :point_right: O Arquivo cadastracar_scripts.sql contém os Scripts SQL Server para criação das tabelas, regras, views etc. <br>
 :point_right: O Arquivo CADASTRACAR.bak é o backup do banco de dados do projeto <br>
 </p>
+
+## Capturas das telas do veículo
+### Veículos
+![alt text](https://github.com/mrtrycatch/CRUD_CADASTRACAR/blob/master/Arquivos/Screenshots/localhost_44331_Veiculo.png)
+## Incluir Veículo
+![alt text](https://github.com/mrtrycatch/CRUD_CADASTRACAR/blob/master/Arquivos/Screenshots/localhost_44331_Veiculo_Create.png)
+Para conferir as demais capturas de tela <a target="_blank" href="https://github.com/mrtrycatch/CRUD_CADASTRACAR/tree/master/Arquivos/Screenshots">Clique aqui</a>.
