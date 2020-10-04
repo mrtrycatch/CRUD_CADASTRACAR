@@ -21,6 +21,7 @@ por pesquisa, quantidade de itens a serem exibidos e paginação.
 ## Descrição dos arquivos
 <p align="justify">
 :point_right: O Arquivo DER_CADASTRACAR.asta é o diagrama de entidade e relacionamento desenvolvido no Astah. <br>
+:point_right: O Arquivo DER_CADASTRACAR.jpg é a imagem do diagrama de entidade e relacionamento desenvolvido no Astah. <br>
 :point_right: O Arquivo cadastracar_scripts.sql contém os Scripts SQL Server para criação das tabelas, regras, views etc. <br>
-:point_right: O Arquivo cadastracar_backup.bak é o backup do banco de dados do projeto <br>
+:point_right: O Arquivo CADASTRACAR.bak é o backup do banco de dados do projeto <br>
 </p>
