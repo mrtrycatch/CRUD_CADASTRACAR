@@ -1,0 +1,32 @@
+﻿@model Cadastracar.DATA.Models.Categoria
+
+@{
+    ViewData["Title"] = "Alterar Categoria";
+}
+
+<h1>Alterar Categoria</h1>
+<div>
+    <a class="btn btn-primary" asp-action="Index">Voltar</a>
+</div>
+<h4>Altere os campos abaixo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CtgaCodigo" />
+            <div class="form-group">
+                <label asp-for="CtgaDescricao" class="control-label"></label>
+                <input asp-for="CtgaDescricao" class="form-control" />
+                <span asp-validation-for="CtgaDescricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Alterar" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

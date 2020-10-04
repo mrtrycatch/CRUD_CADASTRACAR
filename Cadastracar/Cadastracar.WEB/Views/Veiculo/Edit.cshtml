@@ -1,0 +1,263 @@
+﻿@model Cadastracar.WEB.Models.VeiculoViewModel
+
+@{
+    ViewData["Title"] = "Alterar Veículo";
+}
+
+<h1>Alterar veículo</h1>
+
+<h4>Altere as informações abaixo</h4>
+
+<div>
+    <a class="btn btn-primary" asp-action="Index">Voltar</a>
+</div>
+<hr />
+
+@if (ViewBag.MsgError != null)
+{
+    <div class="modal fade" id="ModalError" tabindex="-1" role="dialog" aria-labelledby="ModalErrorLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalErrorLabel">Não foi possível alterar este veículo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @ViewBag.MsgError
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+<div class="row">
+    <div class="col-md">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="card">
+                <div class="card-header">Informações do veículo</div>
+                <div class="card-body row">
+                    <div class="col-md">
+                        <div hidden class="form-group">
+                            <label asp-for="oVeiculo.VcoCodigo" class="control-label"></label>
+                            <input asp-for="oVeiculo.VcoCodigo" class="form-control" />
+                            <span asp-validation-for="oVeiculo.VcoCodigo" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="oVeiculo.VcoPlaca" class="control-label"></label>
+                            <input asp-for="oVeiculo.VcoPlaca" class="form-control" />
+                            <span asp-validation-for="oVeiculo.VcoPlaca" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="oVeiculo.VcoFrota" class="control-label"></label>
+                            <input asp-for="oVeiculo.VcoFrota" class="form-control" />
+                            <span asp-validation-for="oVeiculo.VcoFrota" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="oVeiculo.VcoAnoModelo" class="control-label"></label>
+                            <input asp-for="oVeiculo.VcoAnoModelo" class="form-control" />
+                            <span asp-validation-for="oVeiculo.VcoAnoModelo" class="text-danger"></span>
+                        </div>
+
+                    </div>
+                    <div class="col-md">
+                        <div class="form-group">
+                            <label asp-for="oVeiculo.VcoAnoFabricacao" class="control-label"></label>
+                            <input asp-for="oVeiculo.VcoAnoFabricacao" class="form-control" />
+                            <span asp-validation-for="oVeiculo.VcoAnoFabricacao" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="oVeiculo.VcoDataAquisicao" class="control-label"></label>
+                            <input type="date" asp-for="oVeiculo.VcoDataAquisicao" class="form-control" />
+                            <span asp-validation-for="oVeiculo.VcoDataAquisicao" class="text-danger"></span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="card">
+                <div class="card-header">Categoria</div>
+                <div class="card-body">
+
+                    <div class="form-group">
+                        <label>Categoria atual</label>
+                        <input asp-for="oCategoria.CtgaDescricao" class="form-control" readonly="readonly" />
+                        <span asp-validation-for="oCategoria.CtgaDescricao" class="text-danger"></span>
+                    </div>
+
+                    <div hidden class="form-group">
+                        <label asp-for="oVeiculo.VcoCodCategoria" class="control-label"></label>
+                        <input asp-for="oVeiculo.VcoCodCategoria" class="form-control" />
+                        <span asp-validation-for="oVeiculo.VcoCodCategoria" class="text-danger"></span>
+                    </div>
+
+                    <table id="DataTableCategoria" class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.oCategoria.CtgaCodigo)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.oCategoria.CtgaDescricao)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in ViewBag.oListCategoria)
+                            {
+                                <tr>
+                                    <td>
+                                        @item.CtgaCodigo
+                                    </td>
+                                    <td>
+                                        @item.CtgaDescricao
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br />
+            <div class="card">
+                <div class="card-header">Responsável</div>
+                <div class="card-body">
+
+                    <div class="form-group">
+                        <label>Responsável atual</label>
+                        <input asp-for="oFuncionario.FuncNome" class="form-control" readonly="readonly" />
+                        <span asp-validation-for="oFuncionario.FuncNome" class="text-danger"></span>
+                    </div>
+
+                    <div hidden class="form-group">
+                        <label asp-for="oVeiculo.VcoCodFuncResponsavel" class="control-label"></label>
+                        <input asp-for="oVeiculo.VcoCodFuncResponsavel" class="form-control" />
+                        <span asp-validation-for="oVeiculo.VcoCodFuncResponsavel" class="text-danger"></span>
+                    </div>
+
+                    <table id="DataTableResponsavel" class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.oFuncionario.FuncCodigo)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.oFuncionario.Cpf)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.oFuncionario.FuncNome)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in ViewBag.oListFuncionario)
+                            {
+                                <tr>
+                                    <td>
+                                        @item.FuncCodigo
+                                    </td>
+                                    <td>
+                                        @item.Cpf
+                                    </td>
+                                    <td>
+                                        @item.FuncNome
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-group">
+                <input type="submit" value="Alterar" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+<script>
+        $(document).ready(function () {
+            $('#DataTableCategoria').DataTable({
+                "bJQueryUI": true,
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese.json"
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            var table = $('#DataTableCategoria').DataTable();
+
+            $('#DataTableCategoria tbody').on('click', 'tr', function () {
+                if ($(this).hasClass('selected')) {
+                    $(this).removeClass('selected');
+                    document.getElementById('oVeiculo_VcoCodCategoria').value = "";
+
+                }
+                else {
+                    table.$('tr.selected').removeClass('selected');
+                    $(this).addClass('selected');
+                    var rowData = table.rows({ selected: true }).data();
+                    document.getElementById('oVeiculo_VcoCodCategoria').value = parseInt(rowData[table.$('tr.selected').index()][0]);
+                }
+            });
+
+        });
+
+        $(document).ready(function () {
+            var table = $('#DataTableResponsavel').DataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese.json"
+                }
+            });
+
+            $('#DataTableResponsavel tbody').on('click', 'tr', function () {
+                if ($(this).hasClass('selected')) {
+                    $(this).removeClass('selected');
+                    document.getElementById('oVeiculo_VcoCodFuncResponsavel').value = "";
+
+                }
+                else {
+                    table.$('tr.selected').removeClass('selected');
+                    $(this).addClass('selected');
+                    var rowData = table.rows({ selected: true }).data();
+                    document.getElementById('oVeiculo_VcoCodFuncResponsavel').value = parseInt(rowData[table.$('tr.selected').index()][0]);
+                }
+            });
+
+        });
+
+        $(window).on('load', function () {
+            if ('@ViewBag.MsgError' != '') {
+                $('#ModalError').modal('show');
+            }
+
+        });
+
+    $(document).ready(function () {
+        var $cmpCPF = $("#oVeiculo_VcoPlaca");
+        $cmpCPF.mask('AAA-9999', { reverse: true });
+
+        var $cmpModelo = $("#oVeiculo_VcoAnoModelo");
+        $cmpModelo.mask('9999', { reverse: false });
+
+        var $cmpFabricacao = $("#oVeiculo_VcoAnoFabricacao");
+        $cmpFabricacao.mask('9999', { reverse: false });
+    });
+
+</script>
+
+}

@@ -1,0 +1,84 @@
+﻿@model Cadastracar.DATA.Models.Funcionario
+
+@{
+    ViewData["Title"] = "Alterar funcionário";
+}
+
+<h1>Alterar Usuário</h1>
+<div>
+    <a class="btn btn-primary" asp-action="Index">Voltar</a>
+</div>
+<h4>Altere as informações abaixo</h4>
+<hr />
+
+@if (ViewBag.MsgError != null)
+{
+    <div class="modal fade" id="ModalError" tabindex="-1" role="dialog" aria-labelledby="ModalErrorLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalErrorLabel">Não foi possível alterar este funcionário</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @ViewBag.MsgError
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="row">
+    <div class="col-md">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="FuncCodigo" />
+
+            <div class="card">
+                <div class="card-header">Informações do usuário</div>
+                <div class="card-body row">
+                    <div class="form-group col-md">
+                        <label asp-for="FuncNome" class="control-label"></label>
+                        <input asp-for="FuncNome" class="form-control" />
+                        <span asp-validation-for="FuncNome" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md">
+                        <label asp-for="Cpf" class="control-label"></label>
+                        <input id="MaskCPF" asp-for="Cpf" class="form-control" />
+                        <span asp-validation-for="Cpf" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Alterar" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+<script>
+    $(window).on('load', function () {
+        if ('@ViewBag.MsgError' != '') {
+            $('#ModalError').modal('show');
+        }
+    });
+
+    $(document).ready(function () {
+        var $cmpCPF = $("#MaskCPF");
+        $cmpCPF.mask('000.000.000-00', { reverse: true });
+    });
+
+</script>
+
+}

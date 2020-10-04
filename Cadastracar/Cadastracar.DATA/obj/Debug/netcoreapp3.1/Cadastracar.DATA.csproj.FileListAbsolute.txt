@@ -1,0 +1,9 @@
+C:\Users\vini_\source\repos\Cadastracar\Cadastracar.DATA\bin\Debug\netcoreapp3.1\Cadastracar.DATA.deps.json
+C:\Users\vini_\source\repos\Cadastracar\Cadastracar.DATA\bin\Debug\netcoreapp3.1\Cadastracar.DATA.dll
+C:\Users\vini_\source\repos\Cadastracar\Cadastracar.DATA\obj\Debug\netcoreapp3.1\Cadastracar.DATA.csprojAssemblyReference.cache
+C:\Users\vini_\source\repos\Cadastracar\Cadastracar.DATA\obj\Debug\netcoreapp3.1\Cadastracar.DATA.AssemblyInfoInputs.cache
+C:\Users\vini_\source\repos\Cadastracar\Cadastracar.DATA\obj\Debug\netcoreapp3.1\Cadastracar.DATA.AssemblyInfo.cs
+C:\Users\vini_\source\repos\Cadastracar\Cadastracar.DATA\bin\Debug\netcoreapp3.1\Cadastracar.DATA.pdb
+C:\Users\vini_\source\repos\Cadastracar\Cadastracar.DATA\obj\Debug\netcoreapp3.1\Cadastracar.DATA.csproj.CoreCompileInputs.cache
+C:\Users\vini_\source\repos\Cadastracar\Cadastracar.DATA\obj\Debug\netcoreapp3.1\Cadastracar.DATA.dll
+C:\Users\vini_\source\repos\Cadastracar\Cadastracar.DATA\obj\Debug\netcoreapp3.1\Cadastracar.DATA.pdb

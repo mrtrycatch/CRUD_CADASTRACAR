@@ -1,0 +1,41 @@
+﻿{
+   "ContextClassName": "CADASTRACARContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": true,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": "Models",
+   "ProjectRootNamespace": "Cadastracar.DATA",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[CATEGORIA]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[FUNCIONARIO]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[VEICULO]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[VW_VEICULO]"
+      }
+   ],
+   "UseDatabaseNames": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": false,
+   "UseHandleBars": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseNodaTime": false,
+   "UseSpatial": false,
+   "UseStoredProcedures": false
+}

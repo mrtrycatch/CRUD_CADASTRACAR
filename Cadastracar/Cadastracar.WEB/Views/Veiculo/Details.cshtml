@@ -1,0 +1,105 @@
+﻿@model Cadastracar.WEB.Models.VeiculoViewModel
+
+@{
+    ViewData["Title"] = "Detalhes do veículo";
+}
+
+<h1>Detalhes do veículo</h1>
+
+<div>
+    <h4>Confira os detalhes do veículo abaixo</h4>
+    <div>
+        <a class="btn btn-primary" asp-action="Index">Voltar</a>
+    </div>
+    <hr />
+
+    <div class="card">
+        <div class="card-header">Veículo</div>
+        <div class="card-body row">
+
+            <div class="col-md">
+                <dl>
+                    <dt class="col-sm">
+                        @Html.DisplayNameFor(model => model.oVeiculo.VcoPlaca)
+                    </dt>
+                    <dd class="col-sm">
+                        @Html.DisplayFor(model => model.oVeiculo.VcoPlaca)
+                    </dd>
+                    <dt class="col-sm">
+                        @Html.DisplayNameFor(model => model.oVeiculo.VcoFrota)
+                    </dt>
+                    <dd class="col-sm">
+                        @Html.DisplayFor(model => model.oVeiculo.VcoFrota)
+                    </dd>
+                    <dt class="col-sm">
+                        @Html.DisplayNameFor(model => model.oVeiculo.VcoAnoModelo)
+                    </dt>
+                    <dd class="col-sm">
+                        @Html.DisplayFor(model => model.oVeiculo.VcoAnoModelo)
+                    </dd>
+                </dl>
+            </div>
+
+            <div class="col-md">
+                <dl>
+                    <dt class="col-sm">
+                        @Html.DisplayNameFor(model => model.oVeiculo.VcoAnoFabricacao)
+                    </dt>
+                    <dd class="col-sm">
+                        @Html.DisplayFor(model => model.oVeiculo.VcoAnoFabricacao)
+                    </dd>
+                    <dt class="col-sm">
+                        @Html.DisplayNameFor(model => model.oVeiculo.VcoDataAquisicao)
+                    </dt>
+                    <dd class="col-sm">
+                        @Html.DisplayFor(model => model.oVeiculo.VcoDataAquisicao)
+                    </dd>
+                    <dt class="col-sm">
+                        @Html.DisplayNameFor(model => model.oCategoria.CtgaDescricao)
+                    </dt>
+                    <dd class="col-sm">
+                        @Html.DisplayFor(model => model.oCategoria.CtgaDescricao)
+                    </dd>
+                </dl>
+            </div>
+
+        </div>
+    </div>
+
+    <br />
+
+    <div class="card">
+        <div class="card-header">Responsável</div>
+        <div class="card-body row">
+
+            <div class="col-md">
+                <dl>
+                    <dt class="col-sm">
+                        @Html.DisplayNameFor(model => model.oFuncionario.FuncNome)
+                    </dt>
+                    <dd class="col-sm">
+                        @Html.DisplayFor(model => model.oFuncionario.FuncNome)
+                    </dd>
+                </dl>
+            </div>
+
+            <div class="col-md">
+                <dl>
+                    <dt class="col-sm">
+                        @Html.DisplayNameFor(model => model.oFuncionario.Cpf)
+                    </dt>
+                    <dd class="col-sm">
+                        @Html.DisplayFor(model => model.oFuncionario.Cpf)
+                    </dd>
+                </dl>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<br />
+<div>
+    <a class="btn btn-success" asp-action="Edit" asp-route-id="@Model.oVeiculo.VcoCodigo">Alterar</a>
+    
+</div>
