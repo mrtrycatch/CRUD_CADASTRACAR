@@ -26,7 +26,7 @@ por pesquisa, quantidade de itens a serem exibidos e paginação.
 :point_right: O Arquivo CADASTRACAR.bak é o backup do banco de dados do projeto. <br>
 </p>
 
-## Capturas das telas do veículo
+## Capturas das tela do veículo
 ### Veículos
 ![alt text](https://github.com/mrtrycatch/CRUD_CADASTRACAR/blob/master/Arquivos/Screenshots/localhost_44331_Veiculo.png)
 ## Incluir Veículo
